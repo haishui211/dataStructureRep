@@ -101,6 +101,16 @@ public class SingleLinkedListTest {
 		System.out.println(list.index(23));
 	}
 	
+	@Test
+	public void testInverse() {
+		SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		list.inverse();
+		printAll(list);
+	}
+	
 	private void printAll(SingleLinkedList<Integer> list) {
 		for(int i = 0; i < list.getSize(); i++) {
 			System.out.print(list.get(i) + " ");

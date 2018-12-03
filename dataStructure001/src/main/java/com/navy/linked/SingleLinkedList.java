@@ -122,6 +122,32 @@ public class SingleLinkedList<T> {
 		}
 		return count;
 	}
+	
+	public void inverse() {
+		
+		if(size < 1) {
+			return;
+		}
+		
+		tail = head;
+		Node<T> p = head;
+		Node<T> pNext = p.next;
+		
+		while(p != null) {
+			
+			if(pNext == null) {
+				p.next = null;
+				break;
+			}
+			
+			Node<T> pNextNext = pNext.next;
+			p.next = null;
+			pNext.next = p;
+			p = pNext;
+			pNext = pNextNext;
+		}
+		head = p;
+	}
 
 	public Integer getSize() {
 		return size;
