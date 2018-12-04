@@ -102,6 +102,36 @@ public class DoubleLinkedList<T> {
 		size--;
 		return 1;
 	}
+	
+	public void inverse() {
+		
+		if(size <= 1) {
+			return;
+		}
+		
+		tail = head;
+		Node<T> p = head;
+		Node<T> pNext = p.next;
+		
+		while(p != null) {
+			
+			if(pNext == null) {
+				head = p;
+				break;
+			}
+			
+			Node<T> pNextNext = pNext.next;
+			
+			pNext.next = p;
+			p.pre = pNext;
+			
+			p = pNext;
+			pNext = pNextNext;
+		}
+		
+		head.pre = null;
+		tail.next = null;
+	}
 
 	public Integer getSize() {
 		return size;

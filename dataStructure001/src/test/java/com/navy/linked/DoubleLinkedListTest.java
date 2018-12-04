@@ -54,6 +54,44 @@ public class DoubleLinkedListTest {
 		printAll(list);
 	}
 	
+	@Test
+	public void testInverseOne() {
+		DoubleLinkedList<Integer> list = new DoubleLinkedList<Integer>();
+		list.add(1);
+		list.inverse();
+		printAll(list);
+	}
+	
+	@Test
+	public void testInverseTwo() {
+		DoubleLinkedList<Integer> list = new DoubleLinkedList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.inverse();
+		printAll(list);
+	}
+	
+	@Test
+	public void testInverseThree() {
+		DoubleLinkedList<Integer> list = new DoubleLinkedList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		list.inverse();
+		printAll(list);
+	}
+	
+	@Test
+	public void testInverseFour() {
+		DoubleLinkedList<Integer> list = new DoubleLinkedList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		list.add(4);
+		list.inverse();
+		printAll(list);
+	}
+	
 	private void printAll(DoubleLinkedList<Integer> list) {
 		for(int i = 0; i < list.getSize(); i++) {
 			System.out.print(list.get(i) + " ");

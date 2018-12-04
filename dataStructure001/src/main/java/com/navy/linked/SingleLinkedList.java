@@ -136,6 +136,7 @@ public class SingleLinkedList<T> {
 		while(p != null) {
 			
 			if(pNext == null) {
+				head = p;
 				break;
 			}
 			
@@ -143,7 +144,6 @@ public class SingleLinkedList<T> {
 			pNext.next = p;
 			p = pNext;
 			pNext = pNextNext;
-			head = p;
 		}
 		
 		tail.next = null;
