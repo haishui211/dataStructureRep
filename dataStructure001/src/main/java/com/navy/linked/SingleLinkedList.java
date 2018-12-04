@@ -125,7 +125,7 @@ public class SingleLinkedList<T> {
 	
 	public void inverse() {
 		
-		if(size < 1) {
+		if(size <= 1) {
 			return;
 		}
 		
@@ -136,17 +136,17 @@ public class SingleLinkedList<T> {
 		while(p != null) {
 			
 			if(pNext == null) {
-				p.next = null;
 				break;
 			}
 			
 			Node<T> pNextNext = pNext.next;
-			p.next = null;
 			pNext.next = p;
 			p = pNext;
 			pNext = pNextNext;
+			head = p;
 		}
-		head = p;
+		
+		tail.next = null;
 	}
 
 	public Integer getSize() {

@@ -102,11 +102,39 @@ public class SingleLinkedListTest {
 	}
 	
 	@Test
-	public void testInverse() {
+	public void testInverseOne() {
+		SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
+		list.add(1);
+		list.inverse();
+		printAll(list);
+	}
+	
+	@Test
+	public void testInverseTwo() {
+		SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.inverse();
+		printAll(list);
+	}
+	
+	@Test
+	public void testInverseThree() {
 		SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
 		list.add(1);
 		list.add(2);
 		list.add(3);
+		list.inverse();
+		printAll(list);
+	}
+	
+	@Test
+	public void testInverseFour() {
+		SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		list.add(4);
 		list.inverse();
 		printAll(list);
 	}
