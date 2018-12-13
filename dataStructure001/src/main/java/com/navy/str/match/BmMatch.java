@@ -6,7 +6,6 @@ import java.util.List;
 /**
  * BM匹配算法
  * @author haishui211
- *
  */
 public class BmMatch {
 	
@@ -25,7 +24,7 @@ public class BmMatch {
 		}
 		
 		Shift shift = new Shift();
-		for(int i = 0; (i+targetLen) < originLen; ) {
+		for(int i = 0; (i+targetLen) <= originLen; ) {
 			String originChild = origin.substring(i, i+targetLen);
 			if(matchOne(originChild, target, shift)) {
 				result = i;
@@ -53,9 +52,10 @@ public class BmMatch {
 			
 			if(!s1.equals(s2)) {
 				shift(target, s1, goodTail, startIndex, shift);
+				goodTail = "";
 				return false;
 			}
-			goodTail+=s1;
+			goodTail = s1 + goodTail;
 		}
 		
 		return true;
@@ -98,9 +98,7 @@ public class BmMatch {
 		if(goodTail == null || goodTail.length() < 1) {
 			return -1;
 		}
-		int otherGoodTailLastInTarget = otherGoodTailLastInTarget(target, goodTail, badIndex);
-		int result = badIndex + 1 - otherGoodTailLastInTarget;
-		return result;
+		return otherGoodTailLastInTarget(target, goodTail, badIndex);
 	}
 	
 	/**
@@ -117,6 +115,7 @@ public class BmMatch {
 			String goodTailChild = goodTailChildList.get(i);
 			index = goodTailChildLastInTarget(target, goodTailChild, badIndex);
 			if(index >= 0) {
+				index = target.length() - index - 1;
 				break;
 			}
 		}
@@ -133,9 +132,10 @@ public class BmMatch {
 	private static int goodTailChildLastInTarget(String target, String goodTail, int badIndex) {
 		int goodTailLen = goodTail.length();
 		for(int i = badIndex; (i-goodTailLen) >= 0; i--) {
-			String maybeGoodTail = target.substring(i-goodTailLen, i);
+			int startIndex = i-goodTailLen;
+			String maybeGoodTail = target.substring(startIndex, i);
 			if(isEqual(maybeGoodTail, goodTail)) {
-				return i;
+				return startIndex;
 			}
 		}
 		return -1;
