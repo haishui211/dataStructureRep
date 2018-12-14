@@ -131,7 +131,7 @@ public class BmMatch {
 	 */
 	private static int goodTailChildLastInTarget(String target, String goodTail, int badIndex) {
 		int goodTailLen = goodTail.length();
-		for(int i = badIndex; (i-goodTailLen) >= 0; i--) {
+		for(int i = (target.length()-1); (i-goodTailLen) >= 0; i--) {
 			int startIndex = i-goodTailLen;
 			String maybeGoodTail = target.substring(startIndex, i);
 			if(isEqual(maybeGoodTail, goodTail)) {
