@@ -102,6 +102,15 @@ public class SingleLinkedListTest {
 	}
 	
 	@Test
+	public void testIndexNotExist() {
+		SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
+		list.add(12);
+		list.add(23);
+		list.add(34);
+		System.out.println(list.index(556));
+	}
+	
+	@Test
 	public void testInverseOne() {
 		SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
 		list.add(1);
@@ -143,5 +152,17 @@ public class SingleLinkedListTest {
 		for(int i = 0; i < list.getSize(); i++) {
 			System.out.print(list.get(i) + " ");
 		}
+	}
+	
+	@Test
+	public void testPrintAll() {
+		SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
+		list.add(12);
+		list.add(12);
+		list.add(12);
+		list.add(23);
+		printAll(list);
+		System.out.println();
+		list.printAll();
 	}
 }

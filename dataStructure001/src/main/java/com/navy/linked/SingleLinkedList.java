@@ -20,11 +20,29 @@ public class SingleLinkedList<T> {
 		if(tail == null) {
 			head = insert;
 			tail = insert;
+			size++;
+			return;
 		}
 		
 		Node<T> temp = tail;
 		temp.next = insert;
 		tail = insert;
+		size++;
+	}
+	
+	public void addAtHead(T member) {
+		
+		Node<T> insert = new Node<T>();
+		insert.data = member;
+		
+		if(tail == null) {
+			head = insert;
+			tail = insert;
+			size++;
+			return;
+		}
+		insert.next = head;
+		head = insert;
 		size++;
 	}
 	
@@ -54,12 +72,21 @@ public class SingleLinkedList<T> {
 		while(target != null) {
 			index++;
 			if(member.equals(target.data)) {
-				break;
+				return index;
 			}
 			target = target.next;
 		}
 		
-		return index;
+		return -1;
+	}
+	
+	public void printAll() {
+		Node<T> target = head;
+		while(target != null) {
+			System.out.print(target.data + "  ");
+			target = target.next;
+		}
+		System.out.println();
 	}
 	
 	public int remove(T member) {
@@ -99,6 +126,7 @@ public class SingleLinkedList<T> {
 		//如果需要删除的节点恰好是链表的尾节点，将尾节点指向到目标节点的前一个节点
 		if(target.next == null) {
 			tail = prev;
+			prev.next = null;
 			size--;
 			return 1;
 		}
