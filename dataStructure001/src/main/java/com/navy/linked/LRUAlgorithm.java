@@ -28,7 +28,7 @@ public class LRUAlgorithm<T> {
 	}
 	
 	private void resolveNotExist(T member) {
-		if(lruSize < sll.getSize()) {
+		if(sll.getSize() >= lruSize) {
 			//lru链表已满
 			T lastMember = sll.get(lruSize-1);
 			sll.remove(lastMember);

@@ -13,11 +13,13 @@ public class LRUAlgorithmTest {
 		lrua.printAll();
 		lrua.access(3);
 		lrua.printAll();
-//		lrua.access(2);
-//		lrua.printAll();
-//		lrua.access(334);
-//		lrua.printAll();
-//		lrua.access(335);
-//		lrua.printAll();
+		lrua.access(2);
+		lrua.printAll();
+		lrua.access(2);
+		lrua.printAll();
+		lrua.access(334);
+		lrua.printAll();
+		lrua.access(335);
+		lrua.printAll();
 	}
 }
