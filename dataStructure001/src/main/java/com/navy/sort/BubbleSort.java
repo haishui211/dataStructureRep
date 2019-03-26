@@ -25,7 +25,7 @@ public class BubbleSort {
 				hasExchange = true;
 			}
 		}
-		printAll(list);
+//		printAll(list);
 		return hasExchange;
 	}
 	
