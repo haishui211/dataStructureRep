@@ -7,7 +7,7 @@ import java.util.Set;
 
 import com.navy.sort.BubbleSort;
 
-public class ThreeNumber {
+public class ThreeNumberPractice {
 	public static void main(String[] args) {
 		int[] nums = {-1, 0, 1, 2, -1, -4};
 		Set<String> set = new HashSet<String>();
@@ -17,10 +17,13 @@ public class ThreeNumber {
 					continue;
 				}
 				for(int k = 0; k < nums.length; k++) {
-					if(k == j || k == i || ((nums[i]+nums[j]+nums[k]) != 0))) {
+					if(k == j || k == i) {
 						continue;
 					}
-					
+					int sum = nums[i] + nums[j] + nums[k];
+					if(sum != 0){
+						continue;
+					}
 					String str = resolve(nums[i], nums[j], nums[k]);
 					if(!set.contains(str)) {
 						System.out.println(str);
