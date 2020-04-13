@@ -17,6 +17,23 @@ public class SingleLinkedListTest {
 	}
 	
 	@Test
+	public void testAddAtHead() {
+		SingleLinkedList2<Integer> list = new SingleLinkedList2<Integer>();
+		list.addAtHead(9);
+		list.addAtHead(8);
+		list.addAtHead(7);
+		list.addAtHead(6);
+		list.addAtHead(5);
+		list.addAtHead(4);
+		list.addAtHead(3);
+		list.addAtHead(2);
+		
+		for(int i = 0; i < list.getSize(); i++) {
+			System.out.println(list.get(i));
+		}
+	}
+	
+	@Test
 	public void testRemoveHead() {
 		SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
 		list.add(12);
@@ -71,14 +88,14 @@ public class SingleLinkedListTest {
 	
 	@Test
 	public void testIndex() {
-		SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
+		SingleLinkedList2<Integer> list = new SingleLinkedList2<Integer>();
 		list.add(12);
 		System.out.println(list.index(12));
 	}
 	
 	@Test
 	public void testIndexHead() {
-		SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
+		SingleLinkedList2<Integer> list = new SingleLinkedList2<Integer>();
 		list.add(12);
 		list.add(23);
 		System.out.println(list.index(12));
@@ -86,7 +103,7 @@ public class SingleLinkedListTest {
 	
 	@Test
 	public void testIndexTail() {
-		SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
+		SingleLinkedList2<Integer> list = new SingleLinkedList2<Integer>();
 		list.add(12);
 		list.add(23);
 		System.out.println(list.index(23));
@@ -94,7 +111,7 @@ public class SingleLinkedListTest {
 	
 	@Test
 	public void testIndexMid() {
-		SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
+		SingleLinkedList2<Integer> list = new SingleLinkedList2<Integer>();
 		list.add(12);
 		list.add(23);
 		list.add(34);
@@ -103,7 +120,7 @@ public class SingleLinkedListTest {
 	
 	@Test
 	public void testIndexNotExist() {
-		SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
+		SingleLinkedList2<Integer> list = new SingleLinkedList2<Integer>();
 		list.add(12);
 		list.add(23);
 		list.add(34);

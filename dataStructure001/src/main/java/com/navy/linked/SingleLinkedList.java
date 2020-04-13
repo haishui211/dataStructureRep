@@ -129,7 +129,7 @@ public class SingleLinkedList<T> {
 			prev.next = null;
 			size--;
 			return 1;
-		}
+		}	
 		
 		prev.next = target.next;
 		size--;
