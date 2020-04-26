@@ -1,5 +1,8 @@
 package com.navy.practice;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class QingWa {
 	
 	//题目：一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个n级的台阶总共有多少种跳法？
@@ -18,8 +21,19 @@ public class QingWa {
 	}
 	
 	public static void main(String[] args) {
-		for(int i = 1; i < 10; i++) {
-			System.out.println(i + ": " + qingWaTiao(i));
+		
+		List<Integer> result = new ArrayList<Integer>();
+		
+		Integer n = 1;
+		for(int i = 0; i < 100; i++) {
+			if(n <= 2) {
+				result.add(qingWaTiao(n));
+			}
+			else {
+				result.add(result.get(i-1)+result.get(i-2));
+			}
+			n++;
+			System.out.println(i + ": " + result.get(i));
 		}
 	}
 }
