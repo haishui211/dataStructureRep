@@ -1,4 +1,4 @@
-package com.navy.tree;
+package com.navy.tree.binarySearchTree;
 
 public class Node<T> {
 	
