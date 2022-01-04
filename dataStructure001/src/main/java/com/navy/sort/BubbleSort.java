@@ -12,6 +12,7 @@ public class BubbleSort {
 				break;
 			}
 		}
+		printAll(list);
 	}
 	
 	private static boolean oneBubble(List<Integer> list, int end) {

@@ -3,7 +3,7 @@ package com.navy.linked;
 
 /**
  * 单向链表
- * @author haishui211
+ * @author haishui211 212
  * @param <T>
  */
 public class SingleLinkedList<T> {
